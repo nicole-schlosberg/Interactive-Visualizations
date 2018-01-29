@@ -23,14 +23,14 @@ In this unit you will be building a couple of basic Shiny Apps and then use your
 
 ## Videos
 
-[Dhankar, R. (2015). HR Attrition Dashboard - Shiny and ggplot2](https://www.youtube.com/watch?v=5FnuAvljPqQ&list=PLQE-vxB8i4yh8WYqpgFsEv40W0xd8a4D2)
+* [Dhankar, R. (2015). HR Attrition Dashboard - Shiny and ggplot2](https://www.youtube.com/watch?v=5FnuAvljPqQ&list=PLQE-vxB8i4yh8WYqpgFsEv40W0xd8a4D2)
 
-[CBMI WUSM. (2016). Hands on Shiny Dashboard.](https://www.youtube.com/watch?v=jUgb4l2obgU)
+* [CBMI WUSM. (2016). Hands on Shiny Dashboard.](https://www.youtube.com/watch?v=jUgb4l2obgU)
 
 ## Knowledge Check
 Once you have completed all tasks in the unit, please complete the [knowledge check]().
 
 ## Additional Materials
 
-[Siny Gallery](https://shiny.rstudio.com/gallery/)
+* [Shiny Gallery](https://shiny.rstudio.com/gallery/)
 
