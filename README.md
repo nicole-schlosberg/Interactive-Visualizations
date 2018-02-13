@@ -28,7 +28,7 @@ In this unit you will be building a couple of basic Shiny Apps and then use your
 * [CBMI WUSM. (2016). Hands on Shiny Dashboard.](https://www.youtube.com/watch?v=jUgb4l2obgU)
 
 ## Knowledge Check
-Once you have completed all tasks in the unit, please complete the [knowledge check]().
+Once you have completed all tasks in the unit, please complete the [knowledge check](https://tccolumbia.qualtrics.com/jfe/form/SV_e4E7uZmOWFjhIwJ).
 
 ## Additional Materials
 
