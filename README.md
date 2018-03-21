@@ -33,4 +33,5 @@ Once you have completed all tasks in the unit, please complete the [knowledge ch
 ## Additional Materials
 
 * [Shiny Gallery](https://shiny.rstudio.com/gallery/)
+* [D’Agostino McGowan, L. (2018). Building Dashboards with shinydashboard](https://www.datacamp.com/courses/building-dashboards-with-shinydashboard)
 
