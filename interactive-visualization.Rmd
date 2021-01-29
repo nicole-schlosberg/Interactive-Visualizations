@@ -117,7 +117,9 @@ Now see if you can replace the standard histogram in the above Shiny App with a 
 
 ## Final Project
 
-Finally, build an interactive visualization using the data sets quiz-categories.csv and midterm-results.csv. These data represent midterm results from an open book test. The categories represent the skills required to answer each question:
+Finally, build an interactive visualization using the data sets quiz-categories.csv and midterm-results.csv. These data represent midterm results from an open book test. Deploy your dashboard to the Shiny Apps hosting service. 
+
+The categories represent the skills required to answer each question:
 
 wrangling - Question required data manipulations skills  
 coding - Question required coding skills  
