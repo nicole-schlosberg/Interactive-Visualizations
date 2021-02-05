@@ -34,7 +34,7 @@ In this unit you will be building a couple of basic Shiny Apps and then use your
 
 
 ## Knowledge Check
-Once you have completed all tasks in the unit, please complete the [knowledge check](https://tccolumbia.qualtrics.com/jfe/form/SV_bIchFX8s5M3Fdml).
+Once you have completed all tasks in the unit, please complete the [knowledge check](https://tccolumbia.qualtrics.com/jfe/form/SV_eJ0QJWNsklHsdro).
 
 ## Additional Materials
 
