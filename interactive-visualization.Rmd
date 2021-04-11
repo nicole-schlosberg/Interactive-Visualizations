@@ -192,51 +192,77 @@ D1$key <- ifelse(D1$counts==0,0, ifelse(D1$counts==1&D1$counter==0,0, ifelse(D1$
 D2 <- D1 %>% group_by(id,Subject) %>% summarize(score=sum(key))
 D2 <-unique(D2)
 I1 <- spread(D2,Subject,score) 
-#I1 <- data.frame(I1)
+I1<-data.frame(I1)
+names <- I1$id
+rownames(I1) <- names
+I1 <- I1[,-1]
+
+#Save dataframe to a csv file so it can be imported into the shiny app
+write.csv(I1,"/Users/nicoleschlosberg/Documents/workspace/Git/interactive-visualization/interactive-visualization/Calculated-Scores.csv", row.names = TRUE)
 ```
 
+#Final interactive interface
 ```{r}
 library(shiny)
-#Import data
-#I1 <- read.csv("StudentScores-Subject.csv", header = TRUE)
-#names <- colnames(I1)
-#names <- names[-1]
+library(ggplot2)
 
 #Set up interactive interface
 ui <- fluidPage(
   titlePanel("Student Midterm Scores by Subject"),
   sidebarLayout(
     sidebarPanel(
-      radioButtons("Subject", "Select Subject:", 
-                   list("coding"='a', "d.trees"='b', "googleable"='c', "jitl"='d',"n.nets"='e',"nlp"='f',"non.googleable"='g',"sna"='h',"substantive"='i',"viz"='j',"wrangling"='k')), 
-      selectInput(inputId = "id",  
-      label = "Choose Student ID",  
-      choices = I1$id, selected = "Select")#,  
-      #selectInput(inputId = "Subject", 
-      #label = "Choose Subject", 
-      #choices = names, selected = "Select")
+       checkboxGroupInput("show_subjects", "Pick Subject to See Scores:", names(I1),selected = NA)
     ),
-   verbatimTextOutput("Score")
+   mainPanel(
+          DT::dataTableOutput("scores")
+    )
   )
 )
 
-server <- function(input, output) { 
-  data <- reactive({I1[I1$id == input$id,]})  
-  output$Score <- renderPrint({      
-    if(input$Subject=='a'){i<-2}     
-    if(input$Subject=='b'){i<-3}     
-    if(input$Subject=='c'){i<-4}     
-    if(input$Subject=='d'){i<-5}     
-    if(input$Subject=='e'){i<-6} 
-    if(input$Subject=='f'){i<-7} 
-    if(input$Subject=='g'){i<-8} 
-    if(input$Subject=='h'){i<-9} 
-    if(input$Subject=='i'){i<-10} 
-    if(input$Subject=='j'){i<-11} 
-    if(input$Subject=='k'){i<-12} 
-    I1[data(),i]
-    }) 
+server <- function(input, output) {
+  output$scores <- DT::renderDataTable({
+    DT::datatable(I1[, input$show_subjects, drop = FALSE])
+  },include.rownames=TRUE)
 }
 
 shinyApp(ui = ui, server = server)
 ```
+
+#Testing out code
+```{r}
+library(shiny)
+library(ggplot2)
+
+#Set up interactive interface
+ui <- fluidPage(
+  titlePanel("Student Midterm Scores by Subject"),
+  sidebarLayout(
+    sidebarPanel(
+      #conditionalPanel(
+        #'input.dataset === "I1"',
+       checkboxGroupInput("show_subjects", "Pick Subject to See Scores:", names(I1),selected = NA)
+      #),
+      #selectInput(inputId = "show_subjects",  label = "Pick Subject",  choices = names(I1), selected = "Select")
+    ),
+   mainPanel(
+        #id = 'dataset',
+        #"show_subjects", 
+        #tableOutput(
+          DT::dataTableOutput("scores")#,
+    )
+  )
+)
+
+
+server <- function(input, output) {
+  #I2 = I1[sample(nrow(I1)),]
+  output$scores <- DT::renderDataTable({
+    DT::datatable(I1[, input$show_subjects, drop = FALSE])
+  },include.rownames=TRUE)
+}
+
+
+shinyApp(ui = ui, server = server)
+```
+
+
