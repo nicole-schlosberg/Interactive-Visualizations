@@ -11,10 +11,21 @@ Interactive visualization is becoming a more prominent feature of reporting. Bus
 
 ## Completed Tasks
 
-I built a couple of basic Shiny Apps and created an interactive visualization of some mid-term test data. 
+I built a couple of basic Shiny Apps.  
+
+* Histogram  
+![Histogram](Visualization1.mov)  
+
+* Ggplot Histogram 
+![GGplot](Visualization2.mov)  
+
+I then used the class mid-term data to create an interactive visualization that launches to the internet.  
 
 * [My Shiny App](https://06w8d7-nicole0schlosberg.shinyapps.io/interactive-visualization/)
 ![test](Visualization.mov)
+
+
+
 
 ## Resources
 
